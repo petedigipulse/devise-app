@@ -30,7 +30,10 @@ Some setup you must do manually if you haven't yet:
 
   5. You can copy Devise views (for customization) to your app by running:
 
+
        rails g devise:views
+
+Respurce: Tutorial- http://www.sitepoint.com/devise-authentication-in-depth/
 
 == README
 
