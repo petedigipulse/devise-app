@@ -42,6 +42,9 @@ recoverable – Provides mechanism to reset forgotten passwords.
 rememberable – Enables “remember me” functionality that involves cookies.
 trackable – Tracks sign in count, timestamps, and IP address.
 validatable – Validates e-mail and password (custom validators can be used).
+
+When using conifrmable & lockable son't forget to uncomment two lots of migration conditions.Also change User model migration file to include t.string :name if model doesn't include it, othewise it won't work.  (Trick for young players)
+
 == README
 
 This README would normally document whatever steps are necessary to get the
