@@ -77,4 +77,9 @@ Unlocks = ONly onbe view with form to request email with unlock link.
 To customise views for certain modules only like Registerable or confirmable run (rails g devise:views -v registrations confirmations.
 Note: Can have seperate views for different models if equipped with Devise ie homeowner or pro login on same site
 Example ( rails g devise:views homeowners)
+
+Note:
+When Creating Views For Customised Models ie Admin Devise creates a folder which sits on top of the model views . It;s slightly annoying but can be lived with. Should be possible to merge if routing is correct. 
+
+
 == README
