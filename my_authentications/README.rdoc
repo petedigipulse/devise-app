@@ -65,5 +65,16 @@ config.secret_key(makes previous tokens invalid)
 
 If you change password length don't forget to set it back to at least 8..128)
 
+CREATE VIEWS:
+COnfirmations = Contains a lone new.html.erb view for resend confirmation email.
+Mailer = All emails stored here. 
+Passwprd = Views with forms to request, password, reset email, and change.
+REgistrations = The new.html.erb is rendered when user registered on site. The Edit.html contains from to update profile. 
+Sessions = Only one view, which is login from site
+Shared = Only one partial is present containing links being dispkayed on each Devise page (like "Forgot Password or resend confirmation")
+Unlocks = ONly onbe view with form to request email with unlock link.
 
+To customise views for certain modules only like Registerable or confirmable run (rails g devise:views -v registrations confirmations.
+Note: Can have seperate views for different models if equipped with Devise ie homeowner or pro login on same site
+Example ( rails g devise:views homeowners)
 == README
