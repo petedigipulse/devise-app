@@ -35,31 +35,17 @@ Some setup you must do manually if you haven't yet:
 
 Respurce: Tutorial- http://www.sitepoint.com/devise-authentication-in-depth/
 
+List of Devise Modules:
+database_authenticatable – Users will be able to authenticate with a login and password that are stored in the database. (password is stored in a form of a digest).
+registerable – Users will be able to register, update, and destroy their profiles.
+recoverable – Provides mechanism to reset forgotten passwords.
+rememberable – Enables “remember me” functionality that involves cookies.
+trackable – Tracks sign in count, timestamps, and IP address.
+validatable – Validates e-mail and password (custom validators can be used).
+
+When using conifrmable & lockable don't forget to uncomment two lots of migration conditions.
+Also in Devise migration file to include t.string :name for locakable & confirmable to operate properly, othewise it won't work.  (Trick for young player
+
+
+
 == README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

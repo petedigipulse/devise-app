@@ -43,33 +43,27 @@ rememberable – Enables “remember me” functionality that involves cookies.
 trackable – Tracks sign in count, timestamps, and IP address.
 validatable – Validates e-mail and password (custom validators can be used).
 
-When using conifrmable & lockable son't forget to uncomment two lots of migration conditions.Also change User model migration file to include t.string :name if model doesn't include it, othewise it won't work.  (Trick for young players)
+When using conifrmable & lockable don't forget to uncomment two lots of migration conditions.
+Also in Devise migration file to include t.string :name for locakable & confirmable to operate properly, othewise it won't work.  (Trick for young player
+
+Devise Initializer::Devise.rb file set configurations:
+CONFIG FOR LOCKABKE:
+config.remember_for = 2.weeks
+config.lock_strategy = :failed_attemots
+config.unlock_keys = :both (Can provide either time or email if only want to use one)
+config.maximum_attempts = 20
+config.unlock_in = 1.hour (only use if using :time or:both)
+config.last_attempt_warning = true 
+
+CONFIG FOR CONFIRMABLE:
+config.confirm_within = 3.days ( For how long token to stay valid, set to nil if you don't want token to expire)
+config.reconfirmable = true
+
+For live apps do 
+config.mailer_sender(Puts to form)
+config.secret_key(makes previous tokens invalid)
+
+If you change password length don't forget to set it back to at least 8..128)
+
 
 == README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
