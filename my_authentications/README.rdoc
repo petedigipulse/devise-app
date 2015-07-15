@@ -75,11 +75,26 @@ Shared = Only one partial is present containing links being dispkayed on each De
 Unlocks = ONly onbe view with form to request email with unlock link.
 
 To customise views for certain modules only like Registerable or confirmable run (rails g devise:views -v registrations confirmations.
-Note: Can have seperate views for different models if equipped with Devise ie homeowner or pro login on same site
+Note: Can have seperate views for different models if equipped with Devise ie home
+
+owner or pro login on same site
 Example ( rails g devise:views homeowners)
 
 Note:
+Devise will note generate a model just by creating views. 
 When Creating Views For Customised Models ie Admin Devise creates a folder which sits on top of the model views . It;s slightly annoying but can be lived with. Should be possible to merge if routing is correct. 
 
+MAILER
+In dev environ the emails won't be sent, you can still see content in the console.
+Click on the link below to see how to set up Production Env with mailer
+ http://guides.rubyonrails.org/action_mailer_basics.html#example-action-mailer-configuration
 
+When in production you may have to use an add on to send mail ie MailChimp API or SendGrid
+You can visit my repo to see how to use the MailChimp API https://github.com/petedigipulse/mailchimp-api
+
+If you use a custom mailer you'll have to change the "config.mailer" setting inside devise.rb
+You should also be sending the mail in the background, otherwise users will have to wait for their email before they are redirected. 
+
+
+To complete: Delayed Jobs With gem 'delayed_job_active_record'
 == README
